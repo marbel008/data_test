@@ -1,18 +1,12 @@
-# My Project
+# ECI Project
 
-This project template is a demonstration for the RepCo workshop.
-
-## Usage
-
-Click "Use this template" at the top of this page to create a new repository with the same folder structure.
+This project is about the development of a formula to estimate an embryonic competence index based on the expression of eight biomarker genes
 
 ## Project Structure
+To run this project, the user needs to input the RNA sequencing file as raw counts. ENSEMBL Gene IDs should be used as Gene IDs.
 
-The project structure distinguishes three kinds of folders:
-- read-only (RO): not edited by either code or researcher
-- human-writeable (HW): edited by the researcher only.
-- project-generated (PG): folders generated when running the code; these folders can be deleted or emptied and will be completely reconstituted as the project is run.
-
+## Required Dtasets
+The function should executed using the "dataTrain.txt" file found in the train folder. An example dataset is inside the Example folder (both inside the data folder)
 
 ```
 .
@@ -22,9 +16,8 @@ The project structure distinguishes three kinds of folders:
 ├── README.md
 ├── requirements.txt
 ├── data               <- All project data, ignored by git
-│   ├── processed      <- The final, canonical data sets for modeling. (PG)
-│   ├── raw            <- The original, immutable data dump. (RO)
-│   └── temp           <- Intermediate data that has been transformed. (PG)
+│   ├── train          <- The required dataset for training the model
+│   ├── example        <- Example datasets
 ├── docs               <- Documentation notebook for users (HW)
 │   ├── manuscript     <- Manuscript source, e.g., LaTeX, Markdown, etc. (HW)
 │   └── reports        <- Other project reports and notebooks (e.g. Jupyter, .Rmd) (HW)
@@ -35,8 +28,42 @@ The project structure distinguishes three kinds of folders:
 
 ```
 
-## Add a citation file
-Create a citation file for your repository using [cffinit](https://citation-file-format.github.io/cff-initializer-javascript/#/)
+## Required R packages
+library(scales)
+library(DESeq2)
+library(bapred)
+
+Enter the following if (any) of these packages are not installed: 
+install.packages("scales")
+install.packages("bapred")
+
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("DESeq2")
+
+
+
+## citation
+cff-version: 1.2.0
+title: ECI
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Belen
+    family-names: Rabaglino
+    email: m.b.rabaglino@uu.nl
+    affiliation: Utrecht University
+  - given-names: Peter
+    family-names: Hansen
+    email: pjhansen@ufl.edu
+    affiliation: University of Florida
+abstract: >-
+  This project is derived from: M. B. Rabaglino, D.
+  Salilew-Wondim, A. Zolini, D. Tesfaye, M. Hoelker, P.
+  Lonergan, P. Hansen. FASEB J 2023 Vol. 37 Issue 3 Pages
+  e22809.
 
 ## License
 
