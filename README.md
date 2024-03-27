@@ -1,5 +1,7 @@
 # ECI Project
 
+[![DOI](https://sandbox.zenodo.org/badge/777672359.svg)](https://sandbox.zenodo.org/doi/10.5072/zenodo.41515)
+
 This project is about the development of a formula to estimate an embryonic competence index based on the expression of eight biomarker genes
 
 ## Project Structure
